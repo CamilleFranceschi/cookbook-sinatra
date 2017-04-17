@@ -1,0 +1,11 @@
+<h1>Here is the list of recipes in your cookbook</h1>
+<ul>
+<% @recipes.each_with_index do |recipe, index| %>
+  <li>
+    <%= "#{index + 1} #{recipe.name}" %>
+  </li>
+<% end %>
+</ul>
+
+
+
