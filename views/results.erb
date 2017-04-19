@@ -1,0 +1,20 @@
+<h1>Here is the list of recipes with ingredient <%= @ingredient %> you can import</h1>
+<ul>
+<% @results.each_with_index do |result, index| %>
+  <li>
+    <a href=<%= URI.encode "http://9c35f483.ngrok.io/add?recipe=#{result}"%>>
+    <%= "#{index + 1} #{result.name}" %>
+    </a>
+
+  </li>
+<% end %>
+</ul>
+
+
+<!-- <h1> What recipe you want to import ? </h1>
+<form action="/add" method="post">
+  <input type="text" name="recipe" required="required" placeholder="Recipe index" />
+  <input type="submit" value="Import">
+</form>
+ -->
+
