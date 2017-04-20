@@ -1,20 +1,3 @@
-<!-- <p>
-  What do you want to do ?
-  1. List recipes
-  2. Create a recipe
-  3. Destroy a recipe
-  4. Import a recipe
-  5. Leave the cookbook
-</p>
-
-
-Formulaire simple qui enverra une requête POST
-<form action="/" method="post">
-  <label for="POST-index">Type a number:</label>
-  <input id="POST-index" type="text" name="index">
-  <input type="submit" value="Save">
-</form> -->
-
 <h1>Here is the list of recipes in your cookbook</h1>
 <ul>
 <% @recipes.each_with_index do |recipe, index| %>
@@ -23,3 +6,8 @@ Formulaire simple qui enverra une requête POST
   </li>
 <% end %>
 </ul>
+
+
+<a href='/import'>Import a recipe</a>
+<a href='/new'>Add a new recipe</a>
+<a href='/delete'}">Delete a recipe</a>

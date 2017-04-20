@@ -3,14 +3,10 @@
 <% @recipes.each_with_index do |recipe, index| %>
   <li>
     <%= "#{index + 1} #{recipe.name}" %>
+    <form action="/delete" method="post">
+      <input type="hidden" name="index" value = "<%= index %>" />
+      <input type="submit" value="Delete the recipe">
+    </form>
   </li>
 <% end %>
 </ul>
-
-<br><br><br>
-
-<h1> What recipe you want to delete ? </h1>
-<form action="/delete" method="post">
-  <input type="text" name="index" required="required" placeholder="Index" />
-  <input type="submit" value="Delete">
-</form>

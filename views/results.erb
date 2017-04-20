@@ -2,10 +2,12 @@
 <ul>
 <% @results.each_with_index do |result, index| %>
   <li>
-    <a href=<%= URI.encode "http://9c35f483.ngrok.io/add?recipe=#{result}"%>>
     <%= "#{index + 1} #{result.name}" %>
-    </a>
-
+    <form action="/new" method="post">
+      <input type="hidden" name="name" value = "<%= result.name %>"/>
+      <input type="hidden" name="description" value = "<%= result.description %>"/>
+      <input type="submit" value="Import the recipe">
+    </form>
   </li>
 <% end %>
 </ul>

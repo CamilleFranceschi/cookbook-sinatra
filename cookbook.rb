@@ -1,6 +1,7 @@
 require "csv"
 require_relative "recipe"
 require_relative "marmiton_service"
+require "pry-byebug"
 
 class Cookbook # OK
   attr_reader :recipes
@@ -30,7 +31,7 @@ class Cookbook # OK
 
   def remove_recipe(index)
     # deleter l'objet de la variable d'instance recipes
-    @recipes.delete_at(index - 1)
+    @recipes.delete_at(index)
     # deleter la ligne du fichier CSV == reloader le CSV en mode wb
     csv_options = { col_sep:',', force_quotes:true, quote_char: '"'}
     CSV.open(@csv_file_path, "wb", csv_options) do |csv|
@@ -54,3 +55,6 @@ class Cookbook # OK
   end
 end
 
+# cookbook = Cookbook.new('data/cookbook.csv')
+# p cookbook.remove_recipe(1)
+# p
