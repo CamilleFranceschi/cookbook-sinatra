@@ -2,12 +2,16 @@
 <ul>
 <% @recipes.each_with_index do |recipe, index| %>
   <li>
-    <%= "#{index + 1} #{recipe.name}" %>
+    <a href='/<%= index + 1 %>'>
+      <%= "#{index + 1} #{recipe.name}" %>
+    </a>
   </li>
 <% end %>
 </ul>
 
 
 <a href='/import'>Import a recipe</a>
+<br>
 <a href='/new'>Add a new recipe</a>
-<a href='/delete'}">Delete a recipe</a>
+<br>
+<a href='/delete'>Delete a recipe</a>

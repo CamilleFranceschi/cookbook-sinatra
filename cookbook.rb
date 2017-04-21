@@ -4,7 +4,6 @@ require_relative "marmiton_service"
 require "pry-byebug"
 
 class Cookbook # OK
-  attr_reader :recipes
   def initialize(csv_file_path)
     @csv_file_path = csv_file_path
     @recipes = []
